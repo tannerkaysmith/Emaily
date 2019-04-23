@@ -11,7 +11,11 @@ class Header extends Component {
             case false:
                 return <li><a href="/auth/google">Login With Google</a></li>;
             default:
-                return <div><li><Payments /></li> <li><a href="/api/logout">Logout</a></li></div>;
+                return [
+                    <li key='1'><Payments /></li>,
+                    <li key='2' style={{margin: '0 0px 0px 12px'}}>Credits: {this.props.auth.credits}</li>,
+                    <li key='3'><a href="/api/logout">Logout</a></li>
+                ];
         }
     }
 
